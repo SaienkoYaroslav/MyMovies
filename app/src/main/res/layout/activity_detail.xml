@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:id="@+id/scroll_view_info">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_view_detail_activity_big_poster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/big_film_label"/>
+
+
+        <ImageView
+            android:id="@+id/image_view_add_to_favorite"
+            android:layout_width="@dimen/size_of_star"
+            android:layout_height="@dimen/size_of_star"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_view_detail_activity_big_poster"
+            app:layout_constraintEnd_toEndOf="@+id/image_view_detail_activity_big_poster"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_detail_activity_big_poster"
+            app:srcCompat="@drawable/favourite_remove"
+            android:contentDescription="@string/button_like_a_star_add_to_favourite"/>
+
+        <include
+            layout="@layout/movie_info"
+            android:id="@+id/movie_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view_add_to_favorite"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
